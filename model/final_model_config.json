@@ -1,0 +1,48 @@
+{
+  "model_name": "XGBoost",
+  "k": 10,
+  "features": [
+    "Sex",
+    "Age",
+    "UA",
+    "NEUT_abs",
+    "CREA",
+    "ALT",
+    "RDW_CV",
+    "PAB",
+    "EO_abs",
+    "ALP"
+  ],
+  "hyperparameters": {
+    "clf__learning_rate": 0.05,
+    "clf__max_depth": 3
+  },
+  "operating_threshold_sens90": 0.028411144390702248,
+  "threshold_metrics_development_OOF": {
+    "threshold": 0.028411144390702248,
+    "TP": 368,
+    "FP": 2116,
+    "FN": 40,
+    "TN": 1653,
+    "Sens": 0.9019607843137255,
+    "Spec": 0.43857787211461924,
+    "PPV": 0.14814814814814814,
+    "NPV": 0.9763733018310691,
+    "F1": 0.25449515905947434,
+    "LRneg": 0.22353890134396165
+  },
+  "development_prevalence": 0.09767775915728992,
+  "provenance": "Frozen before external validation. Predictor identities and hyperparameters were fixed after development; the deployment threshold was derived from five-fold cross-fitted probabilities with sensitivity >=90%. Primary internal performance is reported from the fully nested feature-selection procedure, not from this post-selection frozen object.",
+  "display_features": [
+    "Sex",
+    "Age",
+    "UA",
+    "NEUT#",
+    "CREA",
+    "ALT",
+    "RDW-CV",
+    "PAB",
+    "EO#",
+    "ALP"
+  ]
+}

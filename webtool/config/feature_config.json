@@ -1,0 +1,110 @@
+{
+  "model_name": "XGBoost",
+  "k": 10,
+  "threshold_sens90": 0.028411144390702248,
+  "development_prevalence": 0.09767775915728992,
+  "features": [
+    {
+      "key": "Sex",
+      "label": "Sex",
+      "type": "binary",
+      "options": {
+        "Male": 1,
+        "Female": 0
+      },
+      "default": 1
+    },
+    {
+      "key": "Age",
+      "label": "Age",
+      "unit": "years",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "default": 69
+    },
+    {
+      "key": "UA",
+      "label": "Uric acid",
+      "unit": "μmol/L",
+      "min": 30,
+      "max": 1200,
+      "step": 1,
+      "default": 277
+    },
+    {
+      "key": "NEUT_abs",
+      "label": "Neutrophil count",
+      "unit": "×10⁹/L",
+      "min": 0.0,
+      "max": 60.0,
+      "step": 0.01,
+      "default": 4.87
+    },
+    {
+      "key": "CREA",
+      "label": "Creatinine",
+      "unit": "μmol/L",
+      "min": 10,
+      "max": 1500,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "key": "ALT",
+      "label": "Alanine aminotransferase",
+      "unit": "U/L",
+      "min": 1,
+      "max": 2000,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "key": "RDW_CV",
+      "label": "Red cell distribution width (CV)",
+      "unit": "%",
+      "min": 8.0,
+      "max": 40.0,
+      "step": 0.1,
+      "default": 13.3
+    },
+    {
+      "key": "PAB",
+      "label": "Prealbumin",
+      "unit": "mg/L",
+      "min": 10,
+      "max": 600,
+      "step": 1,
+      "default": 189
+    },
+    {
+      "key": "EO_abs",
+      "label": "Eosinophil count",
+      "unit": "×10⁹/L",
+      "min": 0.0,
+      "max": 10.0,
+      "step": 0.01,
+      "default": 0.07
+    },
+    {
+      "key": "ALP",
+      "label": "Alkaline phosphatase",
+      "unit": "U/L",
+      "min": 5,
+      "max": 2000,
+      "step": 1,
+      "default": 80
+    }
+  ],
+  "internal_performance": {
+    "AUPRC": 0.4991,
+    "AUROC": 0.8259
+  },
+  "external_performance": {
+    "n": 776,
+    "AUPRC": 0.438,
+    "AUROC": 0.781,
+    "sensitivity": 0.934,
+    "NPV": 0.981
+  }
+}

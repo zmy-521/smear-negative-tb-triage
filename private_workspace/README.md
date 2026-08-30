@@ -1,0 +1,1 @@
+This directory is intentionally empty in the public repository. If you are an authorised study investigator rerunning the analysis, either place the private source files here using the original filenames or set the `TB_WORK_ROOT` environment variable to another private workspace. Do not commit patient-level data.

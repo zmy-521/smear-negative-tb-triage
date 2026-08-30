@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+.env
+.venv/
+venv/
+outputs/
+private_workspace/*
+!private_workspace/README.md
+*.log
