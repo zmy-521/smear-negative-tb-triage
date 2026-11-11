@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Smear-negative pulmonary tuberculosis — low-cost triage prediction tool
+"""Smear-negative pulmonary tuberculosis — research prototype (research use only)
 
 冻结的 10 变量 XGBoost 模型，原样部署：变量、超参、插补器中位数、阈值全部来自
 推导队列，外部验证时一个参数未改。
@@ -51,9 +51,11 @@ pipe = load_model()
 st.markdown("<style>[data-testid='stHeaderActionElements']{display:none;}</style>",
             unsafe_allow_html=True)
 st.title("Smear-negative pulmonary tuberculosis")
-st.caption("Low-cost triage prediction tool · 10 routinely available predictors")
-st.caption("Intended to support prioritisation for confirmatory testing rather than "
-           "replace microbiological or molecular diagnosis.")
+st.caption("Research prototype · 10 routinely available predictors")
+st.warning("**Research use only.** This retrospective model has not been validated for "
+           "real-time clinical decision-making. A low model score does not exclude "
+           "tuberculosis and must not delay guideline-recommended molecular testing or "
+           "further clinical evaluation.")
 
 st.subheader("Patient values")
 vals = {}
@@ -78,11 +80,11 @@ if st.button("Predict", type="primary", width="stretch"):
     st.markdown(
         f"### *Based on feature values, predicted possibility of smear-negative "
         f"pulmonary tuberculosis is {p*100:.2f}%*")
-    st.caption(f"Prespecified high-sensitivity threshold = {THR*100:.2f}% "
-               f"(sensitivity ≥ 90% in the development cohort)")
-    st.markdown("**Above the threshold — prioritize confirmatory testing**"
+    st.caption(f"Fixed research threshold: {THR:.4f}, selected in the derivation cohort "
+               f"and unchanged for external evaluation.")
+    st.markdown("**At or above the fixed research threshold; this is not a diagnostic result.**"
                 if p >= THR else
-                "**Below the threshold — confirmatory testing is lower priority**")
+                "**Below the fixed research threshold; tuberculosis is not ruled out.**")
 
     import matplotlib
     matplotlib.use("Agg")
